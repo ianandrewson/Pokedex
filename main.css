@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: pokemon-font;
 }
 
 header{
@@ -8,12 +9,14 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: blue;;
 }
 
 #title-logo{
     display: flex;
     align-items: center;
     font-size: 20px;
+    color: yellow;
 }
 
 #logo{
@@ -27,6 +30,7 @@ header{
     border: 2px solid black;
     padding: 10px;
     font-size: 12px;
+    background-color: red;
 }
 
 main {
@@ -36,6 +40,7 @@ main {
     ".  nav  ."
     "article article article"
     ;
+    background-color: yellow;
 }
 
 #page-nav{
@@ -57,6 +62,7 @@ article{
     height: 150px;
     width: 150px;
     font-size: 12px;
+    background-color: white;
 }
 
 article > img {
