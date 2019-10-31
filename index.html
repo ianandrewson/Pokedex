@@ -5,12 +5,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 
 <body>
-
+    <header>
+        <div id="title-logo">
+            <img id="logo" src="./assets/pokeball3.png" alt="">
+            <h1>Pokedex</h1>
+        </div>
+        <nav>
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+        </nav>
+    </header>
+    <section id="sort-search">
+        <label for="sort">Sort</label>
+            <select name="sort" id="sort">
+                <option value="name">Name</option>
+                <option value="type">Type (main)</option>
+                <option value="attack">Attack</option>
+                <option value="defense">Defense</option>
+                <option value="speed">Speed</option>
+                <option value="id">ID #</option>
+            </select>
+            <select name="search" id="search-option">
+                <option value="name">Name</option>
+                <option value="type">Type</option>
+                <option value="attack">Attack (min)</option>
+                <option value="defense">Defense (min)</option>
+                <option value="speed">Speed (min)</option>
+                <option value="id">ID # (range)</option>
+                <input name="search" type="text" id="search-value">
+            <label for="search">Search</label>
+    </section>
+    <main>
+        <nav id="page-nav">
+            <button id="back">◀</button>
+            <button id="forward">▶</button>
+        </nav>
+        <section id="pokedex">
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+            <article>
+                <img src="" alt="">
+                <p>Name: </p>
+                <p>Type/Type</p>
+                <p>ID</p>
+                <span>Attack</span><span>Defense</span><span>Speed</span>
+            </article>
+        </section>
+    </main>
     <script type="module" src="app.js"></script>
 </body>
 
