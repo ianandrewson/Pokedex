@@ -14,7 +14,7 @@
     <header>
         <div id="title-logo">
             <img id="logo" src="./assets/pokeball3.png" alt="">
-            <h1>Pokedex</h1>
+            <span>Pokédex</span>
         </div>
         <nav>
             <a href="">Link 1</a>
@@ -22,7 +22,8 @@
         </nav>
     </header>
     <section id="sort-search">
-        <label for="sort">Sort</label>
+        <div id="sort-section">
+            <label for="sort">Sort</label>
             <select name="sort" id="sort">
                 <option value="name">Name</option>
                 <option value="type">Type (main)</option>
@@ -31,6 +32,8 @@
                 <option value="speed">Speed</option>
                 <option value="id">ID #</option>
             </select>
+        </div>
+        <div id="search-section">
             <select name="search" id="search-option">
                 <option value="name">Name</option>
                 <option value="type">Type</option>
@@ -39,9 +42,10 @@
                 <option value="speed">Speed (min)</option>
                 <option value="id">ID # (range)</option>
                 <input name="search" type="text" id="search-value">
-            <label for="search">Search</label>
+                <label for="search">Search</label>
+        </div>
     </section>
-    <main>
+        <main>
         <nav id="page-nav">
             <button id="back">◀</button>
             <button id="forward">▶</button>
