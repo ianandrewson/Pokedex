@@ -66,6 +66,22 @@ article > img {
     float: right;
 }
 
+article > p {
+    margin: 5px;
+}
+
+.stats {
+    clear: both;
+}
+
+span {
+    margin: 3px;
+}
+
+.more-stats {
+    display: none;
+}
+
 @media (min-width: 700px){
     #title-logo{
         font-size: 80px;
@@ -84,6 +100,31 @@ article > img {
         font-size: 30px;
     }
 
+
+    article{
+        height: 200px;
+        width: 200px;
+        font-size: 16px;
+    }
+
+    article > img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .more-stats {
+        display: initial;
+    }
+
+    #pokedex {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1300px) {
+    #pokedex {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 
     article{
         height: 300px;
