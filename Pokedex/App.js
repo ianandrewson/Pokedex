@@ -16,14 +16,17 @@ class App extends Component{
         const searchSortDOM = searchSort.renderDOM();
         document.body.appendChild(searchSortDOM);
 
+        const pages = new Paging();
+        const pagesDOM = pages.renderDOM();
+        document.body.appendChild(pagesDOM);
+
         const pokemonList = new PokemonList({ pokemon: [] });
         const pokemonListDOM = pokemonList.renderDOM();
-        document.body.appendChild(pokemonListDOM);
+        document.querySelector('main').appendChild(pokemonListDOM);
 
         const fetchedPokemon = await getHellaPokemon();
         const pokemonResults = fetchedPokemon.results;
         pokemonList.update({ pokemon: pokemonResults });
-
 
 
     }
