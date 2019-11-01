@@ -3,6 +3,7 @@ import Header from './Header.js';
 import SearchSort from './SearchSort.js';
 import PokemonList from './PokemonList.js';
 import getHellaPokemon from '../services/pokedex-api.js';
+import Paging from './Paging.js';
 
 class App extends Component{
     async onRender(){
@@ -22,7 +23,8 @@ class App extends Component{
         const fetchedPokemon = await getHellaPokemon();
         const pokemonResults = fetchedPokemon.results;
         pokemonList.update({ pokemon: pokemonResults });
-        //console.log(pokemonResults);
+
+
 
     }
 
