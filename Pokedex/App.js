@@ -5,11 +5,18 @@ import PokemonList from './PokemonList.js';
 
 class App extends Component{
     onRender(){
+        const header = new Header();
+        const headerDom = header.renderDOM();
+        document.body.appendChild(headerDom);
 
+        
     }
 
     renderHTML(){
-
+        return /*html*/`
+            <body>
+            </body>
+        `;
     }
 }
 
