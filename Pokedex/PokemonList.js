@@ -1,6 +1,5 @@
 import Component from '../Component.js';
 import PokemonItem from './PokemonItem.js';
-import pokemon from '../test/staticPokemon.js';
 
 class PokemonList extends Component {
     onRender(el){
