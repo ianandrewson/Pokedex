@@ -8,9 +8,9 @@ test('time to test a function', function(assert) {
     // Set up your parameters and expectations
     const expected = /*html*/`
         <article>
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="">
-            <p class="pokemon-name">Name: Venusaur</p>
-            <p class="pokemon-type">Grass/Poison</p>
+            <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="">
+            <p class="pokemon-name">Name: venusaur</p>
+            <p class="pokemon-type">grass/poison</p>
             <p class="pokemon-id">ID: 3</p>
             <div class="stats">
                 <span class="stat-atk">Atk: 82 </span><span class="stat-def">Def: 83 </span><span class="stat-spd">Spd: 80 </span>
@@ -22,14 +22,14 @@ test('time to test a function', function(assert) {
             </div>
         </article>
     `;
-
-    const prop = { pokemon };
+    const pokemonProp = pokemon[0];
+    const props = { pokemon: pokemonProp };
 
     //Act 
     // Call the function you're testing and set the result to a const
     
 
-    const newPokemon= new PokemonItem(prop);
+    const newPokemon = new PokemonItem(props);
     const result = newPokemon.renderHTML();
 
     //Assert
