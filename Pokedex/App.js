@@ -6,10 +6,12 @@ import PokemonList from './PokemonList.js';
 class App extends Component{
     onRender(){
         const header = new Header();
-        const headerDom = header.renderDOM();
-        document.body.appendChild(headerDom);
+        const headerDOM = header.renderDOM();
+        document.body.appendChild(headerDOM);
 
-        
+        const searchSort = new SearchSort();
+        const searchSortDOM = searchSort.renderDOM();
+        document.body.appendChild(searchSortDOM);
     }
 
     renderHTML(){
