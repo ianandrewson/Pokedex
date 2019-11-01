@@ -6,6 +6,7 @@ import staticPokemon from '../test/staticPokemon.js';
 
 class App extends Component{
     onRender(){
+        
         let props = { pokemon: staticPokemon };
 
         const header = new Header();

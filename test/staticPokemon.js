@@ -31,7 +31,7 @@ const pokemon = [
         'shape': 'quadruped',
         'pokebase': 'venusaur',
         'pokedex': 'http://www.pokemon.com/us/pokedex/venusaur'
-    }
+    }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
 ];
 
 export default pokemon;
