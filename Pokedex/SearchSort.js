@@ -4,21 +4,30 @@ class SearchSort extends Component{
     onRender(section){
         
         section.querySelector('#search-submit').addEventListener('click', () => {
-            let searchInput = section.querySelector('#search-value').value;
             let searchOption = section.querySelector('#search-option').value;
             if (searchOption === 'name') {
                 searchOption = 'pokemon';
             }
+
+            let searchInput = section.querySelector('#search-value').value;
+            // if (searchInput < 0 || searchInput % 1 !== 0){
+            //     searchInput = Number(searchInput);
+            //     searchInput = Math.abs(searchInput.toFixed());
+            //     alert('Your number was changed to a positive whole number');
+            // }
 
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
             searchParams.set(searchOption, searchInput);
             searchParams.set('page', 1);
-            //searchParams.set('type', searchOption);
 
             window.location.hash = searchParams.toString();
-        });      
+        });
+
+        section.querySelector('#clear').addEventListener('click', () => {
+            window.location.hash = '';
+        });
     }
 
 
@@ -36,6 +45,7 @@ class SearchSort extends Component{
                     <option value="id">ID #</option>
                 </select>
             </div>
+            <button id="clear">Clear</button>
             <div id="search-section">
                 <select name="search" id="search-option">
                     <option value="name">Name</option>
