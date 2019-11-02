@@ -16,9 +16,12 @@ class App extends Component{
         const searchSortDOM = searchSort.renderDOM();
         document.body.appendChild(searchSortDOM);
 
+        const main = document.createElement('main');
+        document.body.appendChild(main);
+
         const pages = new Paging();
         const pagesDOM = pages.renderDOM();
-        document.body.appendChild(pagesDOM);
+        document.querySelector('main').appendChild(pagesDOM);
 
         const pokemonList = new PokemonList({ pokemon: [] });
         const pokemonListDOM = pokemonList.renderDOM();
@@ -27,7 +30,15 @@ class App extends Component{
         async function loadPokemon() {
             const fetchedPokemon = await getHellaPokemon();
             const pokemonResults = fetchedPokemon.results;
-            pokemonList.update({ pokemon: pokemonResults });
+            const numberOfResults = fetchedPokemon.count;
+            const pageNumber = fetchedPokemon.page;
+            const perPage = fetchedPokemon.perPage;
+            pages.update({
+                count: numberOfResults,
+                page: pageNumber,
+                perPage: perPage
+            });
+            pokemonList.update({ pokemon: pokemonResults, });
         }
 
         loadPokemon();

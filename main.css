@@ -50,6 +50,10 @@ main {
     margin-top: 10px;
 }
 
+.disableMe{
+    display: none;
+}
+
 .pokedex {
     grid-area: article;
     display: grid;
