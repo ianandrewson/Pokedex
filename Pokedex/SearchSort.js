@@ -4,15 +4,18 @@ class SearchSort extends Component{
     onRender(section){
         
         section.querySelector('#search-submit').addEventListener('click', () => {
-            const searchInput = section.querySelector('#search-value').value;
-            const searchOption = section.querySelector('#search-option').value;
+            let searchInput = section.querySelector('#search-value').value;
+            let searchOption = section.querySelector('#search-option').value;
+            if (searchOption === 'name') {
+                searchOption = 'pokemon';
+            }
 
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            searchParams.set('s', searchInput);
+            searchParams.set(searchOption, searchInput);
             searchParams.set('page', 1);
-            searchParams.set('type', searchOption);
+            //searchParams.set('type', searchOption);
 
             window.location.hash = searchParams.toString();
         });      
