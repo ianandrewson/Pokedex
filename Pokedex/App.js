@@ -6,7 +6,7 @@ import getHellaPokemon from '../services/pokedex-api.js';
 import Paging from './Paging.js';
 
 class App extends Component{
-    async onRender(){
+    onRender(){
 
         const header = new Header();
         const headerDOM = header.renderDOM();
@@ -24,11 +24,13 @@ class App extends Component{
         const pokemonListDOM = pokemonList.renderDOM();
         document.querySelector('main').appendChild(pokemonListDOM);
 
-        const fetchedPokemon = await getHellaPokemon();
-        const pokemonResults = fetchedPokemon.results;
-        pokemonList.update({ pokemon: pokemonResults });
+        async function loadPokemon() {
+            const fetchedPokemon = await getHellaPokemon();
+            const pokemonResults = fetchedPokemon.results;
+            pokemonList.update({ pokemon: pokemonResults });
+        }
 
-
+        loadPokemon();
     }
 
     renderHTML(){

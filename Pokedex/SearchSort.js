@@ -1,9 +1,24 @@
 import Component from '../Component.js';
 
 class SearchSort extends Component{
-    onRender(){
+    onRender(section){
+        
+        section.querySelector('#search-submit').addEventListener('click', () => {
+            const searchInput = section.querySelector('#search-value').value;
+            const searchOption = section.querySelector('#search-option').value;
 
+            const queryString = window.location.hash.slice(1);
+            const searchParams = new URLSearchParams(queryString);
+
+            searchParams.set('s', searchInput);
+            searchParams.set('page', 1);
+            searchParams.set('type', searchOption);
+
+            window.location.hash = searchParams.toString();
+        });      
     }
+
+
     renderHTML(){
         return /*html*/`
         <section id="sort-search">
@@ -27,7 +42,7 @@ class SearchSort extends Component{
                     <option value="speed">Speed (min)</option>
                     <option value="id">ID # (range)</option>
                     <input name="search" type="text" id="search-value">
-                    <label for="search">Search</label>
+                    <button id="search-submit">Search</button>
             </div>
         </section>
         `;
