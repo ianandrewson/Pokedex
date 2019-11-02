@@ -27,8 +27,17 @@ class Paging extends Component {
         const displayOf = el.querySelector('p');
         displayOf.textContent = `Page ${page} of ${Math.ceil(count / perPage)}`;
 
-            //write to hash
-            //read from hash
+        //write to hash
+        el.querySelector('#back').addEventListener('click', () => {
+            searchParams.set('page', Number(page) - 1);
+            window.location.hash = searchParams.toString();
+        });
+
+        el.querySelector('#forward').addEventListener('click', () => {
+            searchParams.set('page', Number(page) + 1);
+            window.location.hash = searchParams.toString();
+        });
+
     }
 
     renderHTML() {

@@ -51,7 +51,7 @@ main {
 }
 
 .disableMe{
-    display: none;
+    visibility: hidden;
 }
 
 .pokedex {
