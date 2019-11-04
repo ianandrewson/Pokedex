@@ -25,6 +25,24 @@ class SearchSort extends Component{
             window.location.hash = searchParams.toString();
         });
 
+        section.querySelector('#sort').addEventListener('change', () => {
+            const queryString = window.location.hash.slice(1);
+            const sortParams = new URLSearchParams(queryString);
+
+            sortParams.set('sort', section.querySelector('#sort').value);
+
+            window.location.hash = sortParams.toString();
+        });
+
+        section.querySelector('#sort-direction').addEventListener('change', () => {
+            const queryString = window.location.hash.slice(1);
+            const sortDirection = new URLSearchParams(queryString);
+
+            sortDirection.set('direction', section.querySelector('#sort-direction').value);
+
+            window.location.hash = sortDirection;
+        });
+
         section.querySelector('#clear').addEventListener('click', () => {
             window.location.hash = '';
         });
@@ -37,12 +55,17 @@ class SearchSort extends Component{
             <div id="sort-section">
                 <label for="sort">Sort</label>
                 <select name="sort" id="sort">
-                    <option value="name">Name</option>
-                    <option value="type">Type (main)</option>
+                    <option value="pokemon">Name</option>
+                    <option value="type_1">Type (main)</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
                     <option value="speed">Speed</option>
                     <option value="id">ID #</option>
+                </select>
+                <label for="sort-direction">Sort Direction</label>
+                <select name="sort-direction" id="sort-direction">
+                    <option val="asc">Ascending</option>
+                    <option val="desc">Descending</option>
                 </select>
             </div>
             <button id="clear">Clear</button>
